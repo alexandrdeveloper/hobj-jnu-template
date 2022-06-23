@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		item.addEventListener('click', function() {
 			toggleMenu();
 			toggleBurger();
-			menuItem.forEach(item => {
-				item.classList.remove('b-menu__link_active');
-			});
-			this.classList.add('b-menu__link_active');
+			// menuItem.forEach(item => {
+			// 	item.classList.remove('b-menu__link_active');
+			// });
+			// this.classList.add('b-menu__link_active');
 		});
 	});	
 
@@ -57,36 +57,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	$(".b-menu__link, .b-hero-arrow").mPageScroll2id();
 
-	let sections = $('section, .b-hero'), 
-		nav = $('.b-menu'),
-		nav_height = nav.outerHeight();
+	// let sections = $('.section-title, section, .container, .b-hero'), 
+	// 	nav = $('.b-menu'),
+	// 	nav_height = nav.outerHeight();
 
-	$(window).on('scroll', function () {
-	let cur_pos = $(this).scrollTop();
+	// $(window).on('scroll', function () {
+	// let cur_pos = $(this).scrollTop();
 	
-	sections.each(function() {
-		let top = $(this).offset().top - nav_height,
-			bottom = top + $(this).outerHeight();
+	// sections.each(function() {
+	// 	let top = $(this).offset().top - nav_height,
+	// 		bottom = top + $(this).outerHeight();
 		
-		if (cur_pos >= top - 50 && cur_pos <= bottom) {
-		nav.find('.b-menu__link').removeClass('b-menu__link_active');
-		sections.removeClass('active');
+	// 	if (cur_pos >= top - 50 && cur_pos <= bottom) {
+	// 	nav.find('.b-menu__link').removeClass('b-menu__link_active');
+	// 	sections.removeClass('active');
 		
-		$(this).addClass('active');
-		nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('b-menu__link_active');
-		}
-	});
-	});
+	// 	$(this).addClass('active');
+	// 	nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('b-menu__link_active');
+	// 	}
+	// });
+	// });
 
-	nav.find('a').on('click', function () {
-	var $el = $(this), id = $el.attr('href');
+	// nav.find('a').on('click', function () {
+	// var $el = $(this), id = $el.attr('href');
 	
-	$('html, body').animate({
-		scrollTop: $(id).offset().top - nav_height,
-	}, 500);
+	// $('html, body').animate({
+	// 	scrollTop: $(id).offset().top - nav_height,
+	// }, 500);
 	
-	return false;
-	});
+	// return false;
+	// });
 
 	
 
